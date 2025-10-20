@@ -10,6 +10,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
+            <th>{{headers.image}}</th>
             <th>{{headers.description}}</th>
             <th>{{headers.price}}</th>
             <th>{{headers.available}}</th>
@@ -18,6 +19,7 @@
         <tbody>
           @for(product of products; track product.id) {
           <tr>
+            <td><img [src]="product.imageUrl"></td>
             <td>{{product.description}}</td>
             <td>{{product.price}}</td>
             <td>{{product.available}}</td>
