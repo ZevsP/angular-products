@@ -1,0 +1,36 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title class="--mat-sys-primary">
+      {{title}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="p-0">
+     @if(products && products.length) {
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>{{headers.description}}</th>
+            <th>{{headers.price}}</th>
+            <th>{{headers.available}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(product of products; track product.id) {
+          <tr>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.available}}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+     }
+    @else {
+    <div class="alert alert-info">
+      No hay productos
+    </div>
+    }
+  </mat-card-content>
+</mat-card>
