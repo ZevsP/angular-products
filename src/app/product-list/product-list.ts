@@ -29,14 +29,14 @@ export class ProductList {
       description: 'LGA1151 Motherboard',
       available: '2024-09-15',
       price: 96.95,
-      imageUrl: 'assets/motherboard.jpg',
+      imageUrl: 'assets/motherboard.png',
       rating: 4
     }, {
     id: 3,
     description: 'Kingston DDR4 3200 MHz 16GB 2x8GB CL16',
     available: '2024-11-10',
     price: 42.95,
-    imageUrl: 'assets/ssd.jpg',
+    imageUrl: 'assets/ram.png',
     rating: 4
   }
   ];
