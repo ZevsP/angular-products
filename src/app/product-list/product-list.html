@@ -6,11 +6,34 @@
   </mat-card-header>
   <mat-card-content class="p-0">
      @if(products && products.length) {
+       <form class="form p-3 border-bottom">
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2 text-sm-end"
+               for="filterDesc">Filtro:</label>
+        <div class="col-sm-5">
+          <input type="text"
+                 [(ngModel)]="filterSearch"
+                 class="form-control"
+                 name="filterDesc"
+                 id="filterDesc"
+                 placeholder="filtro...">
+        </div>
+        <label class="col-form-label col-sm-5">
+          Filtrando por: {{filterSearch}}</label>
+      </div>
+    </form>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>{{headers.image}}</th>
+            <th>
+              <button class="btn btn-sm"
+                      [class.btn-danger]="showImage"
+                      [class.btn-primary]="!showImage"
+                      (click)="toggleImage()">
+                {{ showImage ? 'Ocultar' : 'Mostrar' }} {{ headers.image }}
+              </button>
+            </th>
             <th>{{headers.description}}</th>
             <th>{{headers.price}}</th>
             <th>{{headers.available}}</th>
@@ -19,10 +42,17 @@
         <tbody>
           @for(product of products; track product.id) {
           <tr>
-            <td><img [src]="product.imageUrl"></td>
+             @if(showImage) {
+            <td><img [src]="product.imageUrl"
+                  alt="imagen del producto"
+                  [title]="product.description | uppercase" /></td>
+            }
+            @else {
+            <td></td>
+            }
             <td>{{product.description}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.available}}</td>
+            <td>{{product.price | currency : 'EUR' : 'symbol'}}</td>
+            <td>{{product.available | date: 'dd/MM/y'}}</td>
           </tr>
           }
         </tbody>

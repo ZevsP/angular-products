@@ -1,16 +1,32 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { UpperCasePipe } from '@angular/common';
 import { Product } from '../interfaces/product';
 
 @Component({
   selector: 'app-product-list',
-  imports: [MatCardModule],
+  imports: [
+    MatCardModule, 
+    FormsModule, 
+    UpperCasePipe
+  ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
 })
+
 export class ProductList {
+   showImage = true
+
+  toggleImage(): void {
+    this.showImage = !this.showImage
+  }
+
+  filterSearch = ''; // Podríamos poner un valor por defecto
+
   title = 'Mi lista de productos';
   headers = {
+    image: 'Imagen',
     description: 'Producto',
     price: 'Precio',
     available: 'Disponible'
