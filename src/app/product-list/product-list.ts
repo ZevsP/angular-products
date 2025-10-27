@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Product } from '../interfaces/product';
 
 @Component({
@@ -9,7 +11,9 @@ import { Product } from '../interfaces/product';
   imports: [
     MatCardModule, 
     FormsModule, 
-    UpperCasePipe
+    UpperCasePipe,
+    CurrencyPipe,
+    DatePipe
   ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
