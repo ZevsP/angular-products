@@ -40,7 +40,7 @@
           </tr>
         </thead>
         <tbody>
-          @for(product of products; track product.id) {
+          @for(product of products | productFilter:filterSearch; track product.id) {
           <tr>
              @if(showImage) {
             <td><img [src]="product.imageUrl"
