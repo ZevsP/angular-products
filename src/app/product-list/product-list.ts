@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
-import { UpperCasePipe } from '@angular/common';
-import { CurrencyPipe } from '@angular/common';
-import { DatePipe } from '@angular/common';
+// import { UpperCasePipe } from '@angular/common';
+// import { CurrencyPipe } from '@angular/common';
+// import { DatePipe } from '@angular/common';
 import { Product } from '../interfaces/product';
 import { ProductFilterPipe } from '../pipes/product-filter-pipe';
 import { ProductItem } from '../product-item/product-item';
@@ -13,9 +13,9 @@ import { ProductItem } from '../product-item/product-item';
   imports: [
     MatCardModule, 
     FormsModule, 
-    UpperCasePipe,
-    CurrencyPipe,
-    DatePipe,
+    // UpperCasePipe,
+    // CurrencyPipe,
+    // DatePipe,
     ProductFilterPipe,
     ProductItem
   ],

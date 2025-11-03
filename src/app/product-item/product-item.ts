@@ -6,7 +6,7 @@ import { DatePipe } from '@angular/common';
 
 
 @Component({
-  selector: 'app-product-item',
+   selector: '[app-product-item]',
   imports: [
     UpperCasePipe,
     CurrencyPipe,

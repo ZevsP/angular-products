@@ -1,4 +1,3 @@
-<tr>
   <td><img [src]="product.imageUrl"
          [class.d-none]="!showImage"
          alt="imagen del producto"
@@ -6,4 +5,3 @@
   <td>{{product.description}}</td>
   <td>{{product.price | currency : 'EUR' : 'symbol'}}</td>
   <td>{{product.available | date: 'dd/MM/y'}}</td>
-</tr>
