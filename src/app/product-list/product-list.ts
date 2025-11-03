@@ -6,6 +6,7 @@ import { CurrencyPipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { Product } from '../interfaces/product';
 import { ProductFilterPipe } from '../pipes/product-filter-pipe';
+import { ProductItem } from '../product-item/product-item';
 
 @Component({
   selector: 'app-product-list',
@@ -15,7 +16,8 @@ import { ProductFilterPipe } from '../pipes/product-filter-pipe';
     UpperCasePipe,
     CurrencyPipe,
     DatePipe,
-    ProductFilterPipe
+    ProductFilterPipe,
+    ProductItem
   ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'

@@ -1,0 +1,9 @@
+<tr>
+  <td><img [src]="product.imageUrl"
+         [class.d-none]="!showImage"
+         alt="imagen del producto"
+         [title]="product.description | uppercase" /></td>
+  <td>{{product.description}}</td>
+  <td>{{product.price | currency : 'EUR' : 'symbol'}}</td>
+  <td>{{product.available | date: 'dd/MM/y'}}</td>
+</tr>
