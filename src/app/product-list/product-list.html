@@ -41,7 +41,10 @@
         </thead>
         <tbody>
           @for(product of products | productFilter:filterSearch; track product.id) {
-          <tr app-product-item></tr>
+          <tr app-product-item
+            [product]="product"
+            [showImage]="showImage">
+          </tr>
           }
         </tbody>
       </table>
