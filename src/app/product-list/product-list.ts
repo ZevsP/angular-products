@@ -37,7 +37,14 @@ export class ProductList {
   private productService = inject(ProductService);
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
+      this.productService.getProducts().subscribe({
+      next: (products) => {
+        this.products = products
+      },
+      error: (err) => console.error('Error obteniendo productos: ', err),
+      complete: () => console.log('La obtención de productos ha finalizado.')
+    });
+  
   }
 
   toggleImage(): void {

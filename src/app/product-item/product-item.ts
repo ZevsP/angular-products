@@ -4,6 +4,7 @@ import { UpperCasePipe } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { StarRating } from '../star-rating/star-rating';
+import { ProductService } from '../services/product-service';
 
 
 @Component({
@@ -32,7 +33,16 @@ export class ProductItem {
 
   // showImage = true;
 
-   changeRating(rating: number) {
-    this.product.rating = rating;
+  //  changeRating(rating: number) {
+  //   this.product.rating = rating;
+  // }
+  
+  constructor(private productService: ProductService) { }
+
+  changeRating(rating: number) {
+    if (this.product.id) {
+      this.productService.updateRating(this.product.id, rating).subscribe(prod => this.product = prod);
+    }
   }
+
 }

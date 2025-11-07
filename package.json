@@ -32,7 +32,7 @@
     "package": "ng build && electron-builder",
     "package-win": "ng build && electron-builder --win",
     "package-linux": "ng build && electron-builder --linux",
-    "start": "json-server --watch server/db.json --port 3000"
+    "server": "json-server --watch server/db.json --port 3000"
   },
   "prettier": {
     "printWidth": 100,
